@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\TestController;
 
 Route::get('/books',[HomeController::class,'index']);
 Route::get('/books/{id}',[BookController::class,'show']);
@@ -16,4 +17,4 @@ Route::get('/profile',[AuthController::class,'profile'])->name('profile');
 Route::patch('/profile',[AuthController::class,'updateProfile'])->name('updateProfile');
 Route::get('/change-password',[AuthController::class,'showChangePaswordForm'])->name('changePasword');
 Route::post('/change-password',[AuthController::class,'changePassword'])->name('changePassword');
-
+Route::get('/test-relations',[TestController::class,'testRelations']);
